@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react'
-import { todoReducer } from '../08-useReducer/todoReducer';
+import { todoReducer } from './todoReducer';
 
 
 const initialState = [];
@@ -8,7 +8,7 @@ const init = () => {
      return JSON.parse(localStorage.getItem('todos')) || initialState;
 };
 
-const useTodo = () => {
+const useTodos = () => {
     const [ todos, dispatch ] = useReducer( todoReducer, initialState, init );
 
     useEffect(() => {
@@ -49,4 +49,4 @@ const useTodo = () => {
     }
 }
 
-export default useTodo
+export default useTodos
